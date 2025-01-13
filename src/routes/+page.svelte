@@ -100,7 +100,7 @@
     updateDays();
   }
   $: updateDays();
-  $: if(selectedDay){
+  $: if(selectedDay || selectedMonth ||selectedYear){
     checkIfMonday();
   }
   // $: checkIfMonday();
