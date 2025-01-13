@@ -143,10 +143,7 @@
     align-items: center;
     gap: 10px;
 }
-.answer{
-    line-height: 10px;
-    font-size: 4rem;
-}
+
 .day{
     color:forestgreen;
 }
