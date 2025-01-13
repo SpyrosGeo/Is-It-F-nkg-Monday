@@ -3,8 +3,7 @@
       Is it Fucking Monday? {isMonday ? "Yeah" : "No"}
 </h2>
 <h3 class="day-subtitle">
-{#if isMonday}
-{:else}
+{#if !isMonday}
     but it is <span class="day">{getDayName()}</span>
 {/if}
 </h3>
