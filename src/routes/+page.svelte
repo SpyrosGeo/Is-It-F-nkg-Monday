@@ -1,15 +1,9 @@
 <div class="container">
 <h2 class="day-title">
-      Is it Fucking Monday?
-  {#if isMonday}
-    <span class="answer">Yeah</span>
-  {:else}
-    <span class="answer">No</span>
-  {/if}
+      Is it Fucking Monday? {isMonday ? "Yeah" : "No"}
 </h2>
 <h3 class="day-subtitle">
 {#if isMonday}
-""
 {:else}
     but it is <span class="day">{getDayName()}</span>
 {/if}
@@ -100,7 +94,10 @@
     updateDays();
   }
   $: updateDays();
-  $: checkIfMonday();
+  $: if(selectedDay){
+    checkIfMonday();
+  }
+  // $: checkIfMonday();
 </script>
 
 
@@ -110,6 +107,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100vh;
   width: 100%;
   gap:10px;
