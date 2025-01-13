@@ -57,7 +57,7 @@
     { name: "December", value: 12 }
   ];
 
-  const years = Array.from({ length: 2031 - 2025 }, (_, i) => 2025 + i); 
+  const years = Array.from({ length: 2071 - 2025 }, (_, i) => 2025 + i); 
 
   let selectedMonth = months[0].value; 
   let selectedDay = 1; 
@@ -85,9 +85,16 @@
     const date = new Date(selectedYear, selectedMonth - 1, selectedDay); 
     return date.toLocaleDateString('en-US', { weekday: 'long' });
   }
+  function getCurrentDate(){
+    const date = new Date(); 
+    selectedYear = date.getFullYear(); 
+    selectedMonth = date.getMonth() + 1; 
+    selectedDay = date.getDate();
+  }
 
   onMount(() => {
     updateDays();
+    getCurrentDate();
   });
   // reactive state checks
   $: if (selectedMonth ||selectedYear) {
